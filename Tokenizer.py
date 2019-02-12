@@ -4,18 +4,18 @@
 import re
 
 # dict contains the name of the token type (key) and a compiled regex (value) for all tokens in the Toy Language
-# Digit and NonZeroDigit are not defined here, as they are only used within the definition of a Literal
-# i.e. all Digits and NonZeroDigits will be interpreted as Literals
+# Digit, NonZeroDigit, and Letter are not defined here since they are only used within the definition
+#   of Literals and Identifiers - i.e. all Digits and NonZeroDigits will be interpreted as Literals
+#   and all Letters as Identifiers
 tokens = {'Whitespace': re.compile(r'\s'),
           'Semicolon': re.compile(r';'),
           'Equal': re.compile(r'='),
-          'Lparen': re.compile(r'\('),
-          'Rparen': re.compile(r'\)'),
+          'Left Paren': re.compile(r'\('),
+          'Right Paren': re.compile(r'\)'),
           'Times': re.compile(r'\*'),
           'Plus': re.compile(r'\+'),
           'Minus': re.compile(r'-'),
           'Identifier': re.compile(r'[a-zA-Z_]([a-zA-Z_]|[0-9])*'),
-          'Letter': re.compile(r'[a-zA-Z_]'),
           'Literal': re.compile(r'0|[1-9][0-9]*'),
           'Invalid Input': re.compile('.')}
 
@@ -56,7 +56,7 @@ try:
     tokenizer.tokenize()
 
     print('\n')
-    tokenizer = Tokenizer('0015 01 / 9')
+    tokenizer = Tokenizer('0+B15 _B01 / 9')
     tokenizer.tokenize()
 
 except Exception as error:
