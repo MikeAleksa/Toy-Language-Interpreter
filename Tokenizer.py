@@ -52,7 +52,7 @@ try:
     t = Tokenizer('x = (-13 * 2) + var3;')
     t.tokenize()
     print('\n')
-    t = Tokenizer('0+B15 _B01 / 9')
+    t = Tokenizer('0+B15 _B01 \n 9 \t 15/3')
     t.tokenize()
 except Exception as error:
     print(error)
