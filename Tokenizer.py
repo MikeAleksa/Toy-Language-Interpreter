@@ -5,8 +5,7 @@ import re
 
 # dict contains the name of the token type (key) and a compiled regex (value) for all tokens in the Toy Language
 # Digit, NonZeroDigit, and Letter are not defined here since they are only used within the definition
-#   of Literals and Identifiers - i.e. all Digits and NonZeroDigits will be interpreted as Literals
-#   and all Letters as Identifiers
+#   of Literals and Identifiers
 tokens = {'Whitespace': re.compile(r'\s'),
           'Semicolon': re.compile(r';'),
           'Equal': re.compile(r'='),
@@ -31,8 +30,7 @@ class Tokenizer:
         # continue to tokenize the string until the current position is at the end of the string
         while self.currentPosition != self.endPosition:
             for pattern in tokens:
-                # for all regex patterns in tokens dictionary, check for a match
-                # higher precedence is given to lower index values in tokens dictionary
+                # for all regex patterns in tokens dictionary, check for a match at current position
                 match = tokens[pattern].match(self.text, self.currentPosition)
                 if match:
                     if pattern == 'Invalid Input':
@@ -52,10 +50,10 @@ class Tokenizer:
 
 # an example of the tokenizer running on two different input strings
 try:
-    tokenizer = Tokenizer('x = (-13 * 2) + var3;')
-    tokenizer.tokenize()
+    t = Tokenizer('x = (-13 * 2) + var3;')
+    t.tokenize()
     print('\n')
-    tokenizer = Tokenizer('0+B15 _B01 / 9')
-    tokenizer.tokenize()
+    t = Tokenizer('0+B15 _B01 / 9')
+    t.tokenize()
 except Exception as error:
     print(error)
