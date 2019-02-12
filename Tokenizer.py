@@ -8,7 +8,7 @@ import re
 #   of Literals and Identifiers
 tokens = {'Whitespace': re.compile(r'\s+'),
           'Semicolon': re.compile(r';'),
-          'Equal': re.compile(r'='),
+          'Equals': re.compile(r'='),
           'Left Paren': re.compile(r'\('),
           'Right Paren': re.compile(r'\)'),
           'Times': re.compile(r'\*'),
