@@ -37,6 +37,7 @@ class Tokenizer:
                 if match:
                     if (pattern == 'Invalid Input'):
                         # catch invalid characters and raise an exception
+                        # catches anything that does not match another pattern in tokens
                         raise Exception('ERROR: unrecognized character ' + self.text[match.start():match.end()])
                     elif (pattern == 'Whitespace'):
                         # skip over whitespace
@@ -47,7 +48,6 @@ class Tokenizer:
                         print(self.text[match.start():match.end()] + ' --- ' + pattern)
                         self.currentPosition = match.end()
                         break
-
 
 
 # an example of the tokenizer running on two different input strings
