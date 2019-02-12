@@ -54,10 +54,8 @@ class Tokenizer:
 try:
     tokenizer = Tokenizer('x = (-13 * 2) + var3;')
     tokenizer.tokenize()
-
     print('\n')
     tokenizer = Tokenizer('0+B15 _B01 / 9')
     tokenizer.tokenize()
-
 except Exception as error:
     print(error)
