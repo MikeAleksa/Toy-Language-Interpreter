@@ -29,17 +29,17 @@ class Tokenizer:
 
     def tokenize(self):
         # continue to tokenize the string until the current position is at the end of the string
-        while (self.currentPosition != self.endPosition):
+        while self.currentPosition != self.endPosition:
             for pattern in tokens:
                 # for all regex patterns in tokens dictionary, check for a match
                 # higher precedence is given to lower index values in tokens dictionary
                 match = tokens[pattern].match(self.text, self.currentPosition)
                 if match:
-                    if (pattern == 'Invalid Input'):
+                    if pattern == 'Invalid Input':
                         # catch invalid characters and raise an exception
                         # catches anything that does not match another pattern in tokens
                         raise Exception('ERROR: unrecognized character ' + self.text[match.start():match.end()])
-                    elif (pattern == 'Whitespace'):
+                    elif pattern == 'Whitespace':
                         # skip over whitespace
                         self.currentPosition = match.end()
                         break
