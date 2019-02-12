@@ -6,7 +6,7 @@ import re
 # dict contains the name of the token type (key) and a compiled regex (value) for all tokens in the Toy Language
 # Digit, NonZeroDigit, and Letter are not defined here since they are only used within the definition
 #   of Literals and Identifiers
-tokens = {'Whitespace': re.compile(r'\s'),
+tokens = {'Whitespace': re.compile(r'\s+'),
           'Semicolon': re.compile(r';'),
           'Equal': re.compile(r'='),
           'Left Paren': re.compile(r'\('),
@@ -56,3 +56,4 @@ try:
     t.tokenize()
 except Exception as error:
     print(error)
+    exit(1)
