@@ -33,16 +33,15 @@ class Tokenizer:
                 # for all regex patterns in tokens dictionary, check for a match at current position
                 match = tokens[pattern].match(self.text, self.currentPosition)
                 if match:
-                    if pattern == 'Invalid Input':
-                        # catch invalid characters and raise an exception
-                        # catches anything that does not match another pattern in tokens
-                        raise Exception('ERROR: unrecognized character ' + self.text[match.start():match.end()])
-                    elif pattern == 'Whitespace':
+                    if pattern == 'Whitespace':
                         # skip over whitespace
                         self.currentPosition = match.end()
                         break
+                    elif pattern == 'Invalid Input':
+                        # catches anything that does not match another pattern in tokens
+                        raise Exception('ERROR: unrecognized character ' + self.text[match.start():match.end()])
                     else:
-                        # output string and corresponding token type
+                        # output matching string and corresponding token type
                         print(self.text[match.start():match.end()] + ' --- ' + pattern)
                         self.currentPosition = match.end()
                         break
