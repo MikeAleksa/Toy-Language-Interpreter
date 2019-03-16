@@ -19,7 +19,7 @@ Project
     	( Exp ) | - Fact | + Fact | Literal | Identifier
 
     Identifier:
-         	Letter [Letter | Digit]*
+        Letter [Letter | Digit]*
 
     Letter:
     	a|...|z|A|...|Z|_

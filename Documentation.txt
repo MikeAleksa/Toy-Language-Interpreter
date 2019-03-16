@@ -1,0 +1,21 @@
+To construct a recursive descent parser, ambiguity must be removed from the CFG for the toy language:
+
+Program ::= Assignment*
+
+Assignment ::= Identifier = Exp;
+
+Exp ::= Term Exp'
+
+Exp' ::= + Term Exp' | - Term Exp' | null
+
+Term ::= Fact Term'
+
+Term' ::= * Fact Term' | null
+
+Fact ::= ( Exp ) | - Fact | + Fact | Literal | Identifier
+
+Identifier ::= Letter [Letter | Digit]*
+
+Letter ::= a|...|z|A|...|Z|_
+
+Literal ::= 0 | [1-9] [0-9]*
