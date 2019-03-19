@@ -40,12 +40,12 @@ class Parser:
     def assignment(self):
         self.consume_token()
         if self.current_token['type'] == 'Id':
-            id = self.current_token['token']
+            var_name = self.current_token['token']
             self.consume_token()
             self.match('=')
             expr = self.expr()
             self.match(';')
-            self.symbol_table[id] = expr
+            self.symbol_table[var_name] = expr
             return
 
     # parse expressions

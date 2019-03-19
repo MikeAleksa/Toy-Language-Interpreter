@@ -11,4 +11,3 @@ p = Parser('x = 3*3; y = 4; z = x + y;')
 p.program()
 
 print(p.symbol_table)
-
