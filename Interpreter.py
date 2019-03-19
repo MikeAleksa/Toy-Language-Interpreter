@@ -6,8 +6,7 @@
 
 from Parser import Parser
 
-p = Parser('x = 3*3; y = 4; z = x + y;')
-
+p = Parser('x = 1; y = 2; z = ---(x+y)*(x+-y);')
 p.program()
-
-print(p.symbol_table)
+for var_name, value in p.symbol_table.items():
+    print('%s = %i' % (var_name, value))

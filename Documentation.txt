@@ -23,7 +23,7 @@ To construct a recursive descent parser, ambiguity must be removed from the CFG 
 
 Parser:
 
-    The Parser is a recursive descent parser that starts with some text and recursively parses the text using the CFG above, starting at the program level, until an EOF token or an error is found.
+    The Parser is a recursive descent parser that takes with some text and recursively parses the text using the CFG above, starting at the program level, until an EOF token or an error is found. Variable names and values are stored and updated in a dictionary representing a symbol table.
 
 
 Tokenizer:
