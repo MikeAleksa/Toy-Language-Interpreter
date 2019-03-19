@@ -1,21 +1,33 @@
 To construct a recursive descent parser, ambiguity must be removed from the CFG for the toy language:
 
-Program ::= Assignment*
+    Program ::= Assignment*
 
-Assignment ::= Identifier = Exp;
+    Assignment ::= Identifier = Exp;
 
-Exp ::= Term Exp'
+    Exp ::= Term Exp'
 
-Exp' ::= + Term Exp' | - Term Exp' | null
+    Exp' ::= + Term Exp' | - Term Exp' | null
 
-Term ::= Fact Term'
+    Term ::= Fact Term'
 
-Term' ::= * Fact Term' | null
+    Term' ::= * Fact Term' | null
 
-Fact ::= ( Exp ) | - Fact | + Fact | Literal | Identifier
+    Fact ::= ( Exp ) | - Fact | + Fact | Literal | Identifier
 
-Identifier ::= Letter [Letter | Digit]*
+    Identifier ::= Letter [Letter | Digit]*
 
-Letter ::= a|...|z|A|...|Z|_
+    Letter ::= a|...|z|A|...|Z|_
 
-Literal ::= 0 | [1-9] [0-9]*
+    Literal ::= 0 | [1-9] [0-9]*
+
+
+Parser:
+
+    The Parser is a recursive descent parser that starts with some text and recursively parses the text using the CFG above, starting at the program level, until an EOF token or an error is found.
+
+
+Tokenizer:
+
+    The Tokenizer is used to extract tokens and their type from some text, which are then returned as a dict for the Parser to use in its syntax analysis.
+
+    The constructor takes in the text to be tokenized, and the read_next_token() function is used to extract and return the next token in the text and its type, return an 'EOF' token if no more text is present, or raise an exception if an unrecognized character is found.
