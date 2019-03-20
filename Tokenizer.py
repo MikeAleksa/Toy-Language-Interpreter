@@ -1,8 +1,5 @@
 # Author: Michael Aleksa
 # A tokenizer for the 'toy language interpreter' final project in CISC 3160 at Brooklyn College, Spring 2019
-#
-# The Tokenizer maintains the current position in the text, and the read_next_token() function returns a tuple
-#     containing the token as a string, and the type of the token, to be used by a recursive descent parser
 
 
 import re

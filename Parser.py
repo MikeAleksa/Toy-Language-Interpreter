@@ -1,7 +1,5 @@
 # Author: Michael Aleksa
 # A parser for the 'toy language interpreter' final project in CISC 3160 at Brooklyn College, Spring 2019
-#
-# The Parser...
 
 
 from Tokenizer import Tokenizer
@@ -14,6 +12,7 @@ class Parser:
         self.t = Tokenizer(text)
         self.current_token = {}
         self.symbol_table = {}
+        self.program()
 
     # read the next token and load it into current_token
     def consume_token(self):
