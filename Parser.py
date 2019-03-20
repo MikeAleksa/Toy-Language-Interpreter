@@ -7,7 +7,7 @@ from Tokenizer import Tokenizer
 
 class Parser:
 
-    # initialize the Parser by loading the program into the Tokenizer
+    # initialize the Parser by loading the program into the Tokenizer and starting to parse from the program level
     def __init__(self, text):
         self.t = Tokenizer(text)
         self.current_token = {}
@@ -26,14 +26,10 @@ class Parser:
 
     # parse program
     def program(self):
-        try:
-            while True:
-                self.assignment()
-                if self.current_token['type'] == 'EOF':
-                    break
-        except Exception as error:
-            print(error)
-            exit(1)
+        while True:
+            self.assignment()
+            if self.current_token['type'] == 'EOF':
+                break
 
     # parse assignment statements
     def assignment(self):
