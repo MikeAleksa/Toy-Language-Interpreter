@@ -2,7 +2,6 @@
 # An interpreter for the 'toy language interpreter' final project in CISC 3160 at Brooklyn College, Spring 2019
 
 
-
 from Parser import Parser
 import sys
 
