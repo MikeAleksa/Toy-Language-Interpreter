@@ -17,7 +17,7 @@ python3 Interpreter.py ./test_files/test4
 
 The Parser is a recursive descent parser that takes with some text and recursively parses the text using the CFG above, starting at the program level, until an EOF token or an error is found. Variable names and values are stored and updated in a dictionary representing a symbol table.
 
-To construct a recursive descent parser, ambiguity must be removed from the context free grammar for the toy language:
+To construct a recursive descent parser, ambiguity must be removed from the context free grammar for the toy language given in the assignment statement:
 
     Program ::= Assignment*
     Assignment ::= Identifier = Exp;
