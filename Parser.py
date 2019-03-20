@@ -85,7 +85,10 @@ class Parser:
         if self.current_token['type'] == 'Lit':
             return int(self.current_token['token'])
         elif self.current_token['type'] == 'Id':
-            return self.symbol_table.get(self.current_token['token'])
+            if self.current_token['token'] in self.symbol_table:
+                return self.symbol_table.get(self.current_token['token'])
+            else:
+                raise Exception('Error: uninitialized variable ' + self.current_token['token'])
         elif self.current_token['type'] == '+':
             return self.factor()
         elif self.current_token['type'] == '-':
