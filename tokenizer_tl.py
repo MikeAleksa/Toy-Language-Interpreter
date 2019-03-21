@@ -1,6 +1,5 @@
-# Author: Michael Aleksa
-# A tokenizer for the 'toy language interpreter' final project in CISC 3160 at Brooklyn College, Spring 2019
-
+# The Tokenizer is used to extract tokens and their type from input text, which are then returned as a dictionary
+#   for the Parser to use in its syntax analysis.
 
 import re
 

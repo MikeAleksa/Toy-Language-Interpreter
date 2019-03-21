@@ -1,9 +1,24 @@
-# Author: Michael Aleksa
-# A parser for the 'toy language interpreter' final project in CISC 3160 at Brooklyn College, Spring 2019
-#   Parser.py uses Tokenizer.py to extract tokens from the input program
+# The Parser is a recursive descent parser that takes some input program and recursively parses the text starting at
+#   the program level, until an EOF token or an error is found. Variable names and values are stored and updated in a
+#   dictionary representing a symbol table.
+#
+# To construct a recursive descent parser, ambiguity must be removed from the context free grammar for the toy language
+#   given in the assignment statement:
+#       Program ::= Assignment*
+#       Assignment ::= Identifier = Exp;
+#       Exp ::= Term Exp'
+#       Exp' ::= + Term Exp' | - Term Exp' | null
+#       Term ::= Fact Term'
+#       Term' ::= * Fact Term' | null
+#       Fact ::= ( Exp ) | - Fact | + Fact | Literal | Identifier
+#       Identifier ::= Letter [Letter | Digit]*
+#       Letter ::= a|...|z|A|...|Z|_
+#       Literal ::= 0 | [1-9] [0-9]*#
+#
+# parser_tl.py uses tokenizer_tl.py to extract tokens from the input program
 
 
-from Tokenizer import Tokenizer
+from tokenizer_tl import Tokenizer
 
 
 class Parser:

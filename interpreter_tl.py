@@ -1,9 +1,11 @@
-# Author: Michael Aleksa
-# A command-line interpreter for the 'toy language' final project in CISC 3160 at Brooklyn College, Spring 2019
-#   Interperter.py uses Parser.py to create a symbol table of variable names and their assignments
+# The Interpreter is a command line Python3 utility that can be use to parse a file containing a program written in
+#   the toy language, specified in the final project assignment for CISC. 3160 at Brooklyn College, Spring 2019.
+#   It accepts any number of file names to interpret from the command line.
+#
+# interpreter_tl.py uses the Parser from parser_tl.py to create a symbol table of variable names and their assignments
 
 
-from Parser import Parser
+from parser_tl import Parser
 import sys
 
 
