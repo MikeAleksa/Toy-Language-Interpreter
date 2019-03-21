@@ -1,5 +1,6 @@
 # Author: Michael Aleksa
 # A parser for the 'toy language interpreter' final project in CISC 3160 at Brooklyn College, Spring 2019
+#   Parser.py uses Tokenizer.py to extract tokens from the input program
 
 
 from Tokenizer import Tokenizer
@@ -7,7 +8,7 @@ from Tokenizer import Tokenizer
 
 class Parser:
 
-    # initialize the Parser by loading the program into the Tokenizer and starting to parse from the program level
+    # initialize the Parser by loading the program into the Tokenizer and start parsing from the program level
     def __init__(self, text):
         self.t = Tokenizer(text)
         self.current_token = {}
@@ -57,7 +58,7 @@ class Parser:
             t = self.term()
             return (-1 * t) + self.expr_p()
         else:
-            # if no more expr_p found, return 0 for term + 0
+            # if no more expr_p found, return 0 for (term + 0)
             return 0
 
     # parse terms
@@ -72,7 +73,7 @@ class Parser:
             f = self.factor()
             return f * self.term_p()
         else:
-            # if no more term_p found, return 1 for factor * 1
+            # if no more term_p found, return 1 for (factor * 1)
             return 1
 
     # parse factors
