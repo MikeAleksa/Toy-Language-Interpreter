@@ -2,7 +2,7 @@
 
 
 
-## Getting Started
+## Overview
 
 The goal of this project is to interpret a program written in the toy language specified by the final project [assignment statement](Assignment_Statement.txt) in CISC. 3160 - Programming Languages at Brooklyn College, Spring 2019. The interpreter should be able to:
 * detect syntax errors
